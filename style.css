@@ -1,0 +1,60 @@
+body,html {
+  margin:0;
+  padding:0;
+  font-family: monospace;
+  color:#0f0;
+  background:black;
+  height:100%;
+  overflow-x:hidden;
+}
+canvas#matrixBackground {
+  position:fixed;
+  top:0;left:0;
+  z-index:-1;
+}
+.container {padding:20px;}
+
+/* ===== Header / Nav ===== */
+.site-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,0.7);
+  padding:10px 20px;
+}
+.site-header h1 {font-size:20px;color:#0f0;}
+nav {display:flex;gap:15px;}
+nav a {color:#0f0;text-decoration:none;font-weight:bold;}
+
+.menu-toggle {
+  display:none;
+  font-size:26px;
+  background:none;
+  border:none;
+  color:#0f0;
+  cursor:pointer;
+}
+
+@media (max-width:768px){
+  nav {display:none;flex-direction:column;background:rgba(0,0,0,0.9);
+    position:absolute;top:60px;right:20px;padding:10px;border-radius:8px;}
+  nav.show {display:flex;}
+  .menu-toggle {display:block;}
+}
+
+/* ===== Cards / Forms ===== */
+.form-card, .plugin-card {
+  background:rgba(0,0,0,0.8);
+  padding:15px;
+  margin:10px 0;
+  border:1px solid #0f0;
+  border-radius:8px;
+}
+.btn {
+  background:#0f0;color:black;border:none;padding:8px 12px;cursor:pointer;
+  border-radius:5px;margin-top:5px;
+}
+.btn:hover {background:#090;}
+textarea,input {width:100%;padding:8px;margin:5px 0;background:black;color:#0f0;border:1px solid #0f0;}
+.plugins-grid {display:grid;gap:15px;}
+.muted {font-size:12px;color:#aaa;}
