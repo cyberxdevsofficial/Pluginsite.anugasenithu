@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ANUGA SENITHU WHATSAPP BOT - Main</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="matrixBackground"></canvas>
+
+  <header class="site-header">
+    <h1>ANUGA SENITHU SYSTEM</h1>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav id="menuNav">
+      <a href="index.html">Home</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="plugins.html">Plugins</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h2>Welcome to ANUGA SENITHU WhatsApp Bot System</h2>
+      <p>Deploy WhatsApp bots, download plugins, and explore developer tools with coin-based features.</p>
+    </section>
+
+    <!-- Comment / Review System -->
+    <section class="comments-section">
+      <h2>Community Reviews</h2>
+      <form id="commentForm">
+        <input type="text" id="cName" placeholder="Your Name" required>
+        <textarea id="cText" placeholder="Your Comment/Review" required></textarea>
+        <button type="submit" class="btn">Post Comment</button>
+      </form>
+      <div id="comments"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", ()=>{
+      renderComments();
+      const form=document.getElementById("commentForm");
+      form.addEventListener("submit", e=>{
+        e.preventDefault();
+        addComment({
+          name:document.getElementById("cName").value,
+          text:document.getElementById("cText").value
+        });
+        form.reset();
+        renderComments();
+      });
+    });
+  </script>
+</body>
+</html>
